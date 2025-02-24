@@ -123,9 +123,8 @@ class Game {
     this.canvas.width = 800;
     this.canvas.height = 600;
     
-    // Initialize audio and start music
+    // Initialize audio but don't start music yet
     this.audioManager = new AudioManager();
-    this.audioManager.startMusic();
     
     // Initialize game objects
     this.mario = new Mario();
@@ -145,6 +144,8 @@ class Game {
   private handleKeyDown = (event: KeyboardEvent) => {
     if (this.gameState === 'splash' && event.code === 'Space') {
       this.gameState = 'playing';
+      // Start music when game starts (after user interaction)
+      this.audioManager.startMusic();
       return;
     }
 
@@ -605,6 +606,9 @@ class Game {
   }
 
   private resetGame() {
+    // Stop the current music
+    this.audioManager.stopMusic();
+    
     // Reset game state
     this.gameState = 'splash';
     this.gameOver = false;
