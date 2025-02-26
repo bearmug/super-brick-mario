@@ -145,6 +145,7 @@ class Game {
     if (this.gameState === 'splash' && event.code === 'Space') {
       this.gameState = 'playing';
       // Start music when game starts (after user interaction)
+      console.log('Starting game music...');
       this.audioManager.startMusic();
       return;
     }
