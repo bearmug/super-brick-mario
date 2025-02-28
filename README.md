@@ -1,5 +1,10 @@
 # Super Brick Mario
 
+<div align="center">
+  <img src="public/sample-1.png" alt="Game Screenshot 1" width="400">
+  <img src="public/sample-2.png" alt="Game Screenshot 2" width="400">
+</div>
+
 A web-based game inspired by classic platformers, built with TypeScript and Vite.
 
 ## Prerequisites
